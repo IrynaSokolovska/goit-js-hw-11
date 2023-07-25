@@ -4,11 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
+    <link rel="stylesheet" href="./css/index.css" />
+
     <script type="module" src="./index.js"></script>
   </head>
   <body>
+    <!-- <div>
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwMZEwNPEhAPcAS8YSUbbZKevGjcNjGzTmQeUGwjpoPQ&s"
+        alt="cat"
+      />
+      <button class="js-add">Додати коментар</button>
+      <div class="js-form"></div>
+      <ul class="js-posts"></ul>
+      <p class="js-error"></p>
+    </div>
+
+    <form action="submit" class="js-form-add">
+      <input type="text" name="title" />
+      <textarea name="body" id="" cols="30" rows="10"> </textarea>
+      <button class="js-add">Додати пост</button>
+    </form> -->
+    <form class="search-form" id="search-form">
+      <input
+        type="text"
+        name="searchQuery"
+        autocomplete="off"
+        placeholder="Search images..."
+      />
+      <button type="submit">Search</button>
+    </form>
+    <div class="gallery"></div>
+    <button type="button" class="load-more" hidden>Load more</button>
     <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+
+    <script type="module" src="index.js"></script>
+
+    <script type="module" src="search.js"></script>
   </body>
 </html>
