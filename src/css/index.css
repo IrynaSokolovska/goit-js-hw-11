@@ -10,12 +10,43 @@
 
 .photo-card{
     width: 220px;
-    border: 1px solid black;
+    font-size: 8px;
+    border-radius: 5px;
+    border: 1px solid rgb(35, 0, 78);
+    box-shadow: 1px 2px 4px 1px rgba(109, 62, 124, 0.227),
+    0px 1px 1px 0px rgba(165, 210, 16, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 
 }
-.card-img{
+.card-img{    
     height: 150px;
     width: 100%;
     display: block;
-    object-fit: cover;
+    object-fit: cover;    
+}
+.search-form {
+    background-color: rgb(74, 101, 232);
+    border: 2px solid rgb(15, 3, 65);
+}
+.input{
+    position: relative;
+    color: rgb(5, 5, 192);
+    font-family: Verdana;
+    font-size: 12;
+    border: 2px solid rgb(35, 0, 78);
+    border-radius: 5px;
+    box-shadow: 1px 2px 4px 1px rgba(124, 62, 62, 0.227),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+        
+}
+.btn{
+    font-family:Verdana;
+    font-size: 12;
+    border-color: rgb(156, 82, 225);
+    background-color:rgb(3, 57, 115);
+    color: white;
+
+    border-radius: 5px;
+    border: 2px solid rgb(35, 0, 78);
+        box-shadow: 1px 2px 4px 1px rgba(109, 62, 124, 0.227),
+            0px 1px 1px 0px rgba(165, 210, 16, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
 }

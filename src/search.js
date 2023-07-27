@@ -2,6 +2,8 @@ import Notiflix from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
+import 'simplelightbox/dist/simple-lightbox.min.js';
+
 import { serviceAPI } from './service';
 import { createMarkUp } from './template';
 
@@ -41,8 +43,11 @@ async function handlerSearchForm(evt) {
     }
   } catch (error) {
     Notiflix.Notify.failure('Oops');
+    document.getElementById('#search-form').reset();
   }
+  
 }
+
 
 async function handlerLoadMore() {
   try {
