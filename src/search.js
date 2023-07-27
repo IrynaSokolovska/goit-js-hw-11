@@ -18,19 +18,32 @@ loadMore.addEventListener('click', handlerLoadMore);
 
 async function handlerSearchForm(evt) {
   evt.preventDefault();
-
+  gallery.innerHTML = '';
+  
     const { searchQuery } = evt.currentTarget.elements;
     
-  query = searchQuery.value;
+  query = searchQuery.value.trim();
+  
   page = 1;
+  evt.currentTarget.reset();
+  
+  if (!query) {
+    Notiflix.Notify.failure(
+        'Sorry, empty input. Please fill it.'
+      );
+    return;
+  }
+  
 
   try {
     const data = await serviceAPI(searchQuery.value);
+    
     if (!data.hits.length) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
       return;
+      
     }
 
     Notiflix.Notify.success(`Hooray! We found ${data.totalHits} images.`);
@@ -43,7 +56,7 @@ async function handlerSearchForm(evt) {
     }
   } catch (error) {
     Notiflix.Notify.failure('Oops');
-    document.getElementById('#search-form').reset();
+    
   }
   
 }
