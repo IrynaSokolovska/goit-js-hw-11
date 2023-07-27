@@ -18,7 +18,8 @@ loadMore.addEventListener('click', handlerLoadMore);
 
 async function handlerSearchForm(evt) {
   evt.preventDefault();
-  gallery.innerHTML = '';
+  loadMore.hidden = true;
+  gallery.innerHTML = ''; 
   
     const { searchQuery } = evt.currentTarget.elements;
     
@@ -26,7 +27,7 @@ async function handlerSearchForm(evt) {
   
   page = 1;
   evt.currentTarget.reset();
-  
+
   if (!query) {
     Notiflix.Notify.failure(
         'Sorry, empty input. Please fill it.'
@@ -36,7 +37,7 @@ async function handlerSearchForm(evt) {
   
 
   try {
-    const data = await serviceAPI(searchQuery.value);
+    const data = await serviceAPI(query);
     
     if (!data.hits.length) {
       Notiflix.Notify.failure(
@@ -55,12 +56,9 @@ async function handlerSearchForm(evt) {
       loadMore.hidden = false;
     }
   } catch (error) {
-    Notiflix.Notify.failure('Oops');
-    
-  }
-  
+    Notiflix.Notify.failure('Oops');    
+  }  
 }
-
 
 async function handlerLoadMore() {
   try {
